@@ -66,6 +66,19 @@ function showCards(characters) {
       card.classList.add("dead");
     }
 
+    const toggle = document.createElement("button");
+    toggle.textContent = "Toggle status";
+    toggle.className = "btn btn-danger btn-sm mt-2";
+    toggle.addEventListener("click", function () {
+        card.classList.toggle("dead");
+        if (card.classList.contains("dead")) {
+            info.textContent = `${character.species} · Dead`;
+        } else {
+            info.textContent = `${character.species} · Alive`;
+        }
+    });
+    card.appendChild(toggle);
+
     column.appendChild(card);
     results.appendChild(column);
   });
