@@ -67,4 +67,17 @@ function showCards(characters) {
   });
 }
 
+function nextPage() {
+    page = page + 1;
+    loadPage();
+}
+nextButton.addEventListener("click", nextPage);
+
+function prevPage() {
+    page = page - 1;
+    loadPage();
+}
+
+prevButton.addEventListener("click", prevPage);
+
 loadPage();
