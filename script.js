@@ -68,7 +68,7 @@ function showCards(characters) {
 
     const toggle = document.createElement("button");
     toggle.textContent = "Toggle status";
-    toggle.className = "btn btn-danger btn-sm mt-2";
+    toggle.className = "btn btn-primary btn-sm mt-2";
     toggle.addEventListener("click", function () {
         card.classList.toggle("dead");
         if (card.classList.contains("dead")) {
