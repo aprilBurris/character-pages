@@ -24,6 +24,10 @@ async function loadPage() {
 
         const data = await response.json();
         console.log(data);
+        const totalPages = Math.ceil(data.info.count / 20);
+        pageLabel.textContent = `Pages ${page} of ${totalPages}`;
+        prevButton.disabled = page === 1;
+        nextButton.disabled = page === totalPages;
         statusText.textContent = ""; // clear statusText
 
         showCards(data.results); // Call it
